@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/option1d"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_35sdp"
         android:gravity="center"
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/option2d"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_35sdp"
         android:background="@drawable/bg_disconnect"
@@ -80,10 +80,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/option1d" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/option3d"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_35sdp"
         android:background="@drawable/bg_cancel"
@@ -94,10 +94,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintTop_toBottomOf="@+id/option2d" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/option4d"
         android:layout_width="@dimen/_120sdp"
         android:layout_height="@dimen/_35sdp"
         android:gravity="center"
@@ -108,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/option3d" />
 
     <TextView
         android:id="@+id/textView22"
@@ -122,7 +122,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintTop_toBottomOf="@+id/option4d" />
 
     <TextView
         android:id="@+id/textView23"

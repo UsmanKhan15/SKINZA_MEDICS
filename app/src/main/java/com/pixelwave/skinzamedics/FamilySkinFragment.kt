@@ -21,6 +21,19 @@ class FamilySkinFragment : Fragment() {
         binding.textView22.setOnClickListener {
             findNavController().navigate(R.id.action_familySkinFragment_to_facialConditionFragment)
         }
+        setView()
+        binding.option1d.setOnClickListener {
+            binding.option1d.setBackgroundResource(R.drawable.bg_disconnect)
+            binding.option2d.setBackgroundResource(R.drawable.bg_cancel)
+        }
+        binding.option2d.setOnClickListener {
+            binding.option2d.setBackgroundResource(R.drawable.bg_disconnect)
+            binding.option1d.setBackgroundResource(R.drawable.bg_cancel)
+        }
         return binding.root
+    }
+    private fun setView() {
+        binding.option1d.setBackgroundResource(R.drawable.bg_cancel)
+        binding.option2d.setBackgroundResource(R.drawable.bg_cancel)
     }
 }

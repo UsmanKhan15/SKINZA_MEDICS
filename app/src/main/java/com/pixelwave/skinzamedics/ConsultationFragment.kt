@@ -18,6 +18,20 @@ class ConsultationFragment : Fragment() {
         binding.textView22.setOnClickListener {
             findNavController().navigate(R.id.action_consultationFragment_to_environmentalFragment)
         }
+        setView()
+        binding.option1d.setOnClickListener {
+            binding.option1d.setBackgroundResource(R.drawable.bg_disconnect)
+            binding.option2d.setBackgroundResource(R.drawable.bg_cancel)
+        }
+        binding.option2d.setOnClickListener {
+            binding.option2d.setBackgroundResource(R.drawable.bg_disconnect)
+            binding.option1d.setBackgroundResource(R.drawable.bg_cancel)
+        }
         return binding.root
+    }
+
+    private fun setView() {
+        binding.option1d.setBackgroundResource(R.drawable.bg_cancel)
+        binding.option2d.setBackgroundResource(R.drawable.bg_cancel)
     }
 }
