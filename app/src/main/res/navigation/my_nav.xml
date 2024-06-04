@@ -9,25 +9,157 @@
         android:id="@+id/splashFragment"
         android:name="com.pixelwave.skinzamedics.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.pixelwave.skinzamedics.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signupFragment"
         android:name="com.pixelwave.skinzamedics.SignupFragment"
         android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" />
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_enterDataFragment"
+            app:destination="@id/enterDataFragment" />
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.pixelwave.skinzamedics.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_registerCaseFragment"
+            app:destination="@id/registerCaseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_navigationFragment"
+            app:destination="@id/navigationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_findADoctorFragment"
+            app:destination="@id/findADoctorFragment" />
+    </fragment>
     <fragment
         android:id="@+id/enterDataFragment"
         android:name="com.pixelwave.skinzamedics.EnterDataFragment"
         android:label="fragment_enter_data"
-        tools:layout="@layout/fragment_enter_data" />
+        tools:layout="@layout/fragment_enter_data" >
+        <action
+            android:id="@+id/action_enterDataFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerCaseFragment"
+        android:name="com.pixelwave.skinzamedics.RegisterCaseFragment"
+        android:label="fragment_register_case"
+        tools:layout="@layout/fragment_register_case" >
+        <action
+            android:id="@+id/action_registerCaseFragment_to_scanOrUploadPictureFragment"
+            app:destination="@id/scanOrUploadPictureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanOrUploadPictureFragment"
+        android:name="com.pixelwave.skinzamedics.ScanOrUploadPictureFragment"
+        android:label="fragment_scan_or_upload_picture"
+        tools:layout="@layout/fragment_scan_or_upload_picture" >
+        <action
+            android:id="@+id/action_scanOrUploadPictureFragment_to_durationFragment"
+            app:destination="@id/durationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/durationFragment"
+        android:name="com.pixelwave.skinzamedics.DurationFragment"
+        android:label="fragment_duration"
+        tools:layout="@layout/fragment_duration" >
+        <action
+            android:id="@+id/action_durationFragment_to_consultationFragment"
+            app:destination="@id/consultationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/consultationFragment"
+        android:name="com.pixelwave.skinzamedics.ConsultationFragment"
+        android:label="fragment_consultation"
+        tools:layout="@layout/fragment_consultation" >
+        <action
+            android:id="@+id/action_consultationFragment_to_environmentalFragment"
+            app:destination="@id/environmentalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/environmentalFragment"
+        android:name="com.pixelwave.skinzamedics.EnvironmentalFragment"
+        android:label="fragment_environmental"
+        tools:layout="@layout/fragment_environmental" >
+        <action
+            android:id="@+id/action_environmentalFragment_to_familySkinFragment"
+            app:destination="@id/familySkinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/familySkinFragment"
+        android:name="com.pixelwave.skinzamedics.FamilySkinFragment"
+        android:label="fragment_family_skin"
+        tools:layout="@layout/fragment_family_skin" >
+        <action
+            android:id="@+id/action_familySkinFragment_to_facialConditionFragment"
+            app:destination="@id/facialConditionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/facialConditionFragment"
+        android:name="com.pixelwave.skinzamedics.FacialConditionFragment"
+        android:label="fragment_facial_condition"
+        tools:layout="@layout/fragment_facial_condition" >
+        <action
+            android:id="@+id/action_facialConditionFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.pixelwave.skinzamedics.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_moreInfoResult"
+            app:destination="@id/moreInfoResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreInfoResult"
+        android:name="com.pixelwave.skinzamedics.MoreInfoResult"
+        android:label="fragment_more_info_result"
+        tools:layout="@layout/fragment_more_info_result" >
+        <action
+            android:id="@+id/action_moreInfoResult_to_findADoctorFragment"
+            app:destination="@id/findADoctorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findADoctorFragment"
+        android:name="com.pixelwave.skinzamedics.FindADoctorFragment"
+        android:label="fragment_find_a_doctor"
+        tools:layout="@layout/fragment_find_a_doctor" >
+        <action
+            android:id="@+id/action_findADoctorFragment_to_doctorInfoFragment"
+            app:destination="@id/doctorInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorInfoFragment"
+        android:name="com.pixelwave.skinzamedics.DoctorInfoFragment"
+        android:label="fragment_doctor_info"
+        tools:layout="@layout/fragment_doctor_info" />
+    <fragment
+        android:id="@+id/navigationFragment"
+        android:name="com.pixelwave.skinzamedics.NavigationFragment"
+        android:label="fragment_navigation"
+        tools:layout="@layout/fragment_navigation" />
 </navigation>
