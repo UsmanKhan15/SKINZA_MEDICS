@@ -1,7 +1,9 @@
 package com.pixelwave.skinzamedics.fragments
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -12,6 +14,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.navigation.fragment.findNavController
 import com.pixelwave.skinzamedics.R
@@ -31,6 +37,7 @@ class ScanOrUploadPictureFragment : Fragment() {
     }
     private val REQUEST_IMAGE_CAPTURE = 1
     private val REQUEST_IMAGE_SELECT = 2
+    private val REQUEST_CAMERA_PERMISSION = 3
     private lateinit var imageUri: Uri
     private lateinit var currentPhotoPath: String
 
@@ -59,6 +66,20 @@ class ScanOrUploadPictureFragment : Fragment() {
     }
 
     private fun dispatchTakePictureIntent() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.CAMERA),
+                REQUEST_CAMERA_PERMISSION
+            )
+        } else {
+            launchCamera()
+        }
+    }
+
+    private fun launchCamera() {
         Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
             takePictureIntent.resolveActivity(requireActivity().packageManager)?.also {
                 val photoFile: File? = try {
@@ -80,8 +101,10 @@ class ScanOrUploadPictureFragment : Fragment() {
     }
 
     private fun createImageFile(): File {
-        val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
-        val storageDir: File = requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)!!
+        val timeStamp: String =
+            SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+        val storageDir: File =
+            requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES)!!
         return File.createTempFile(
             "JPEG_${timeStamp}_",
             ".jpg",
@@ -89,6 +112,28 @@ class ScanOrUploadPictureFragment : Fragment() {
         ).apply {
             currentPhotoPath = absolutePath
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CAMERA_PERMISSION) {
+            if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                // Permission granted, proceed with the camera intent
+                launchCamera()
+            } else {
+                // Permission denied, show an explanation to the user
+                Toast.makeText(
+                    requireContext(),
+                    "Camera permission is required to take pictures",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
     }
 
     private fun dispatchSelectPictureIntent() {
@@ -104,6 +149,7 @@ class ScanOrUploadPictureFragment : Fragment() {
                 REQUEST_IMAGE_CAPTURE -> {
                     displayImage(imageUri)
                 }
+
                 REQUEST_IMAGE_SELECT -> {
                     data?.data?.let { uri ->
                         displayImage(uri)
