@@ -1,4 +1,4 @@
-package com.pixelwave.skinzamedics
+package com.pixelwave.skinzamedics.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
+import com.pixelwave.skinzamedics.R
 import com.pixelwave.skinzamedics.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
@@ -16,6 +17,11 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        //if already login then navigate to home
+        if(FirebaseAuth.getInstance().currentUser != null) {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+        }
+
         binding.btnLogin.setOnClickListener {
             val email = binding.editTextTextEmailAddress.text.toString()
             val password = binding.editTextTextPassword.text.toString()

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.pixelwave.skinzamedics.SplashFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.pixelwave.skinzamedics.LoginFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.pixelwave.skinzamedics.SignupFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.pixelwave.skinzamedics.HomeFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/enterDataFragment"
-        android:name="com.pixelwave.skinzamedics.EnterDataFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.EnterDataFragment"
         android:label="fragment_enter_data"
         tools:layout="@layout/fragment_enter_data" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerCaseFragment"
-        android:name="com.pixelwave.skinzamedics.RegisterCaseFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.RegisterCaseFragment"
         android:label="fragment_register_case"
         tools:layout="@layout/fragment_register_case" >
         <action
@@ -79,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/scanOrUploadPictureFragment"
-        android:name="com.pixelwave.skinzamedics.ScanOrUploadPictureFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.ScanOrUploadPictureFragment"
         android:label="fragment_scan_or_upload_picture"
         tools:layout="@layout/fragment_scan_or_upload_picture" >
         <action
@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/durationFragment"
-        android:name="com.pixelwave.skinzamedics.DurationFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.DurationFragment"
         android:label="fragment_duration"
         tools:layout="@layout/fragment_duration" >
         <action
@@ -97,7 +97,7 @@
     </fragment>
     <fragment
         android:id="@+id/consultationFragment"
-        android:name="com.pixelwave.skinzamedics.ConsultationFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.ConsultationFragment"
         android:label="fragment_consultation"
         tools:layout="@layout/fragment_consultation" >
         <action
@@ -106,7 +106,7 @@
     </fragment>
     <fragment
         android:id="@+id/environmentalFragment"
-        android:name="com.pixelwave.skinzamedics.EnvironmentalFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.EnvironmentalFragment"
         android:label="fragment_environmental"
         tools:layout="@layout/fragment_environmental" >
         <action
@@ -115,7 +115,7 @@
     </fragment>
     <fragment
         android:id="@+id/familySkinFragment"
-        android:name="com.pixelwave.skinzamedics.FamilySkinFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.FamilySkinFragment"
         android:label="fragment_family_skin"
         tools:layout="@layout/fragment_family_skin" >
         <action
@@ -124,7 +124,7 @@
     </fragment>
     <fragment
         android:id="@+id/facialConditionFragment"
-        android:name="com.pixelwave.skinzamedics.FacialConditionFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.FacialConditionFragment"
         android:label="fragment_facial_condition"
         tools:layout="@layout/fragment_facial_condition" >
         <action
@@ -151,7 +151,7 @@
     </fragment>
     <fragment
         android:id="@+id/findADoctorFragment"
-        android:name="com.pixelwave.skinzamedics.FindADoctorFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.FindADoctorFragment"
         android:label="fragment_find_a_doctor"
         tools:layout="@layout/fragment_find_a_doctor" >
         <action
@@ -165,7 +165,7 @@
         tools:layout="@layout/fragment_doctor_info" />
     <fragment
         android:id="@+id/navigationFragment"
-        android:name="com.pixelwave.skinzamedics.NavigationFragment"
+        android:name="com.pixelwave.skinzamedics.fragments.NavigationFragment"
         android:label="fragment_navigation"
         tools:layout="@layout/fragment_navigation" />
 </navigation>

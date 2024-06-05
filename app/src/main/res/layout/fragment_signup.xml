@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appcolor"
-    tools:context=".SignupFragment">
+    tools:context=".fragments.SignupFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -34,7 +34,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_25sdp"
             android:layout_marginBottom="@dimen/_15sdp"
             android:fontFamily="@font/poppins_bold"
             android:text="Welcome to Skinza Medics"

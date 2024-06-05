@@ -1,4 +1,4 @@
-package com.pixelwave.skinzamedics
+package com.pixelwave.skinzamedics.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,6 +18,12 @@ class NavigationFragment : Fragment() {
             // Logout
             FirebaseAuth.getInstance().signOut()
             requireActivity().finishAffinity()
+        }
+        binding.imageView2.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
+        binding.textView8.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
         }
         return binding.root
     }
