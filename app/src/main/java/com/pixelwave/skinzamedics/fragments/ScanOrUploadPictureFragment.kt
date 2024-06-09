@@ -1,18 +1,21 @@
 package com.pixelwave.skinzamedics.fragments
-
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.core.content.FileProvider
 import androidx.navigation.fragment.findNavController
 import com.pixelwave.skinzamedics.R
 import com.pixelwave.skinzamedics.databinding.FragmentScanOrUploadPictureBinding
@@ -22,15 +25,14 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-
-// ScanOrUploadPictureFragment.kt
-
 class ScanOrUploadPictureFragment : Fragment() {
+
     private val binding by lazy {
         FragmentScanOrUploadPictureBinding.inflate(layoutInflater)
     }
     private val REQUEST_IMAGE_CAPTURE = 1
     private val REQUEST_IMAGE_SELECT = 2
+    private val REQUEST_CAMERA_PERMISSION = 3
     private lateinit var imageUri: Uri
     private lateinit var currentPhotoPath: String
 
@@ -43,7 +45,7 @@ class ScanOrUploadPictureFragment : Fragment() {
         }
 
         binding.textView10.setOnClickListener {
-            dispatchTakePictureIntent()
+            requestCameraPermission()
         }
 
         binding.imageView15.setOnClickListener {
@@ -58,6 +60,25 @@ class ScanOrUploadPictureFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun requestCameraPermission() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.CAMERA), REQUEST_CAMERA_PERMISSION)
+        } else {
+            dispatchTakePictureIntent()
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == REQUEST_CAMERA_PERMISSION) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                dispatchTakePictureIntent()
+            } else {
+                // Permission denied, show an error message or handle accordingly
+            }
+        }
     }
 
     private fun dispatchTakePictureIntent() {
