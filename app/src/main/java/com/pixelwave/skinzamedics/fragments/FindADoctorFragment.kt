@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< HEAD
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,6 +27,12 @@ class FindADoctorFragment : Fragment() {
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var doctorAdapter: DoctorAdapter
 
+=======
+import com.pixelwave.skinzamedics.databinding.FragmentFindADoctorBinding
+
+class FindADoctorFragment : Fragment() {
+    private val binding by lazy { FragmentFindADoctorBinding.inflate(layoutInflater) }
+>>>>>>> origin/master
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,6 +45,7 @@ class FindADoctorFragment : Fragment() {
         }
         return binding.root
     }
+<<<<<<< HEAD
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -72,4 +80,6 @@ fun fetchDoctorsFromFirebase(onDoctorsFetched: (List<Doctor>) -> Unit) {
             // Handle possible errors.
         }
     })
+=======
+>>>>>>> origin/master
 }

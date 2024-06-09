@@ -20,6 +20,12 @@ class ResultFragment : Fragment() {
         binding.textView22.setOnClickListener {
             findNavController().navigate(R.id.action_resultFragment_to_moreInfoResult)
         }
+        binding.imageView2.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
+        binding.textView8.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
         return binding.root
     }
 }

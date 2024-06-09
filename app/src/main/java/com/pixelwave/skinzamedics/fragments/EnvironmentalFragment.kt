@@ -40,6 +40,12 @@ class EnvironmentalFragment : Fragment() {
             setView()
             binding.option4d.setBackgroundResource(R.drawable.bg_disconnect)
         }
+        binding.imageView2.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
+        binding.textView8.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
         return binding.root
     }
     private fun setView() {

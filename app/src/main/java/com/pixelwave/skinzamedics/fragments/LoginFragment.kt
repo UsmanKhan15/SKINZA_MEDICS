@@ -17,6 +17,11 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        //if already login then navigate to home
+        if(FirebaseAuth.getInstance().currentUser != null) {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+        }
+
         binding.btnLogin.setOnClickListener {
             val email = binding.editTextTextEmailAddress.text.toString()
             val password = binding.editTextTextPassword.text.toString()

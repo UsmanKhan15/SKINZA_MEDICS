@@ -19,6 +19,12 @@ class NavigationFragment : Fragment() {
             FirebaseAuth.getInstance().signOut()
             requireActivity().finishAffinity()
         }
+        binding.imageView2.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
+        binding.textView8.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
         return binding.root
     }
 }

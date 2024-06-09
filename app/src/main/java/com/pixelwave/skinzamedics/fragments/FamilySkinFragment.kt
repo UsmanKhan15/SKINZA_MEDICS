@@ -23,6 +23,7 @@ class FamilySkinFragment : Fragment() {
             findNavController().navigate(R.id.action_familySkinFragment_to_facialConditionFragment)
         }
         setView()
+        binding.option1d.setBackgroundResource(R.drawable.bg_disconnect)
         binding.option1d.setOnClickListener {
             binding.option1d.setBackgroundResource(R.drawable.bg_disconnect)
             binding.option2d.setBackgroundResource(R.drawable.bg_cancel)
@@ -30,6 +31,12 @@ class FamilySkinFragment : Fragment() {
         binding.option2d.setOnClickListener {
             binding.option2d.setBackgroundResource(R.drawable.bg_disconnect)
             binding.option1d.setBackgroundResource(R.drawable.bg_cancel)
+        }
+        binding.imageView2.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
+        binding.textView8.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
         }
         return binding.root
     }
