@@ -1,4 +1,4 @@
-package com.pixelwave.skinzamedics
+package com.pixelwave.skinzamedics.fragments
 
 import android.app.Activity
 import android.content.Intent
@@ -12,13 +12,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.Preview
-import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.navigation.fragment.findNavController
-import com.google.common.util.concurrent.ListenableFuture
+import com.pixelwave.skinzamedics.R
 import com.pixelwave.skinzamedics.databinding.FragmentScanOrUploadPictureBinding
 import java.io.File
 import java.io.IOException
@@ -52,6 +48,13 @@ class ScanOrUploadPictureFragment : Fragment() {
 
         binding.imageView15.setOnClickListener {
             dispatchSelectPictureIntent()
+        }
+
+        binding.imageView2.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
+        }
+        binding.textView8.setOnClickListener {
+            fragmentManager?.popBackStackImmediate()
         }
 
         return binding.root

@@ -1,4 +1,4 @@
-package com.pixelwave.skinzamedics
+package com.pixelwave.skinzamedics.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

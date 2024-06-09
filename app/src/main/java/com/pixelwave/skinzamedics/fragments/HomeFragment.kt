@@ -1,4 +1,4 @@
-package com.pixelwave.skinzamedics
+package com.pixelwave.skinzamedics.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,7 +12,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.pixelwave.skinzamedics.R
 import com.pixelwave.skinzamedics.databinding.FragmentHomeBinding
+import com.pixelwave.skinzamedics.dataclass.Doctor
 
 class HomeFragment : Fragment() {
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }

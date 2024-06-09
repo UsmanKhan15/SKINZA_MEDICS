@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "89402987581",
-    "project_id": "skinza-medics-fc5f3",
-    "storage_bucket": "skinza-medics-fc5f3.appspot.com"
+    "project_number": "821047705504",
+    "project_id": "skinza-fbc68",
+    "storage_bucket": "skinza-fbc68.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:89402987581:android:5983fc7ec0f7f7a6830654",
+        "mobilesdk_app_id": "1:821047705504:android:1f60938c7afcc13013eec5",
         "android_client_info": {
           "package_name": "com.pixelwave.skinzamedics"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDarAEt9LtDXXOQ3ZGdslF4IsqPLGRAgcc"
+          "current_key": "AIzaSyCS8XgTJz698mRQ3DjqJHP1JJ_xZ6OivjI"
         }
       ],
       "services": {

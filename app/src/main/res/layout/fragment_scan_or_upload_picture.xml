@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appcolor"
-    tools:context=".ScanOrUploadPictureFragment">
+    tools:context=".fragments.ScanOrUploadPictureFragment">
 
     <ImageView
         android:id="@+id/imageView2"
