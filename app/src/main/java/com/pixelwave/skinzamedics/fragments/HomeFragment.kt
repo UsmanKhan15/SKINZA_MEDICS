@@ -23,12 +23,11 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         //fetch data from firebase and show on home screen
-// Getting the current user's email
+        // Getting the current user's email
         val user = FirebaseAuth.getInstance().currentUser
         val userEmail = user?.email?.replace(".", ",")
 
         if (userEmail != null) {
-            // Reference to the Firebase Realtime Database
             val database = FirebaseDatabase.getInstance()
             val userRef = database.getReference("users").child(userEmail)
 
